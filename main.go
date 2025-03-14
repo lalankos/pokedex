@@ -93,6 +93,15 @@ func main() {
 				continue
 			}
 			inspectCommand(config, args[1])
+		case "pokedex":
+			if len(config.Pokedex) == 0 {
+				fmt.Println("Your Pokedex is empty.")
+				break
+			}
+			fmt.Println("Your Pokedex:")
+			for name := range config.Pokedex {
+				fmt.Printf(" - %s\n", name)
+			}		
 		default:
 			fmt.Println("Unknown command")
 		}
